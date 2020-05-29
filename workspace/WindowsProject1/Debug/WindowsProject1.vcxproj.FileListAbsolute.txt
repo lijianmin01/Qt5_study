@@ -1,0 +1,2 @@
+E:\github\Qt5_study\workspace\WindowsProject1\Debug\WindowsProject1.exe
+E:\github\Qt5_study\workspace\WindowsProject1\Debug\WindowsProject1.pdb
