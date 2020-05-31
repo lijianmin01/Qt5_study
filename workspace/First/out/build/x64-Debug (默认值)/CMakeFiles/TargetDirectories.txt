@@ -1,0 +1,4 @@
+E:/github/Qt5_study/workspace/First/out/build/x64-Debug (默认值)/CMakeFiles/First.dir
+E:/github/Qt5_study/workspace/First/out/build/x64-Debug (默认值)/CMakeFiles/edit_cache.dir
+E:/github/Qt5_study/workspace/First/out/build/x64-Debug (默认值)/CMakeFiles/rebuild_cache.dir
+E:/github/Qt5_study/workspace/First/out/build/x64-Debug (默认值)/CMakeFiles/First_autogen.dir
