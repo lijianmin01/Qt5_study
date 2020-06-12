@@ -9,6 +9,7 @@
 
 ## 2020.5.31
 * https://zhuanlan.zhihu.com/p/86959079
+* 总：https://zhuanlan.zhihu.com/p/75673557
 
 ## 2020.6.7
 * pyqtdeploy
@@ -27,3 +28,11 @@
 * 2. 语法形式(buttons可以不用指定)：
 * * QMessageBox.information(QWidget, 'Title', 'Content', buttons)
 * 3. 在与消息框交互的时候，可以用一个变量来保存消息框返回的按钮信息，接下来再用判断语句来作出不同的反应。​
+
+## 2020.06.12
+### 6.2 小结
+* 1. 顾名思义，QTextEdit为用来编辑文本，而QTextBrowser用来显示文本；
+
+* 2. setText()用来设置文本，toPlainText()用来获取文本，这两个控件都有这些方法；
+
+* 3. 浏览框会执行Html代码。
