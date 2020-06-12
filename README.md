@@ -32,7 +32,14 @@
 ## 2020.06.12
 ### 6.2 小结
 * 1. 顾名思义，QTextEdit为用来编辑文本，而QTextBrowser用来显示文本；
-
 * 2. setText()用来设置文本，toPlainText()用来获取文本，这两个控件都有这些方法；
-
 * 3. 浏览框会执行Html代码。
+* 图标网：http://easyicon.net/
+
+### 7.5 小结
+* 1. QPushButton和QToolButton非常相似，不过QToolButton更多是与QToolBar搭配使用，用来显示工具图片；
+* 2. 可以通过setIcon()方法来给按钮设置图标；可以用setPixmap()方法给QLabel控件设置图片；
+* 3. toogled信号在按钮状态发生改变时发出；stateChanged也是，不过该信号用于QCheckBox；
+* 4. QRadioButton单选按钮只能进行多选一操作，即每次只会有一个单选按钮被选中；
+* 5. 如果要让QCheckBox拥有三种状态的话，则需要通过setTristate(True)方法来设置；
+* 6. 若要连接带有参数的自定义槽函数，可以通过lambda表达式来完成。
