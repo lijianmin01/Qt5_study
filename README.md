@@ -43,3 +43,13 @@
 * 4. QRadioButton单选按钮只能进行多选一操作，即每次只会有一个单选按钮被选中；
 * 5. 如果要让QCheckBox拥有三种状态的话，则需要通过setTristate(True)方法来设置；
 * 6. 若要连接带有参数的自定义槽函数，可以通过lambda表达式来完成。
+
+## 2020.06.14
+### 8.3 小结
+* 1. 下拉框介绍了QComboBox和QFontComboBox，后者是从前者继承并专门用来给用户选择字体的控件。
+* 2. 添加选项内容方法为addItem()和addItems()，后者添加可循环对象；
+* 3. 当下拉框当前选项发生改变的时候，会触发currentIndexChanged和currentTextChanged信号；
+* 4. setFont()方法可以用来设置一些控件的字体；
+* 5. 数字调节框介绍了QSpinBox和QDoubleSpinBox，前者调节整型数字，后者调节浮点型数字；
+* 6. 当调节框数字发生改变时，会触发valueChanged信号；
+* 7. setRange()方法用来设置范围，setSingleStep()方法用来设置步长，setValue()方法用来设置初始值。​
