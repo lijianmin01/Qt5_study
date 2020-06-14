@@ -53,3 +53,8 @@
 * 5. 数字调节框介绍了QSpinBox和QDoubleSpinBox，前者调节整型数字，后者调节浮点型数字；
 * 6. 当调节框数字发生改变时，会触发valueChanged信号；
 * 7. setRange()方法用来设置范围，setSingleStep()方法用来设置步长，setValue()方法用来设置初始值。​
+
+### 9.3 小结
+* QSlider和QDial用法都差不多
+* Qt.QHorizontal和Qt.Vertical分别用来实现水平的滑动条和垂直的滑动条
+* setWindowTitle()可以设置窗口标题，setFixedSize()可以固定窗口或控件大小。
