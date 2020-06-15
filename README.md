@@ -71,3 +71,8 @@
 * 1. QLCDNumber显示方式其实就跟电子表的显示方式一样。
 * 2. setDigitCount(int)用于设置可显示位数；
 * setSegmentStyle()用于设置样式；setMode()用于设置数字显示方式；display()用于显示。
+
+## ​12.3 小结
+* 1. QCalendarWidget为日历控件，用户可以设置日期范围，可以设置日历初始化时显示的日期(如果没有设置的话，默认为当天日期)；
+* 2. QDateTimeEdit、QDateEdit以及QTimeEdit这三个控件用法差不多，读者掌握QDateTimeEdit的话其他两种其实也就明白怎么使用了；
+* 3. 通过setCalendarPopup(True)方法可以让QDateTimeEdit和QDateEdit显示日历
