@@ -65,3 +65,9 @@
 * 2. 通过isActive()方法来判断定时器是否被激活，setSingleShot()方法可以在触发timeout信号后只调用一次槽函数；
 * 3. 通过setOrientation(Qt.Vertical)方法可以将进度条设为垂直显示；
 * 4. setMinimum()和setMaximum()方法用来设置进度条范围(可以用setRange()替代)，setValue()方法用于设置进度条的当前值，reset()方法用于重置进度条
+
+
+### ​11.2 小结
+* 1. QLCDNumber显示方式其实就跟电子表的显示方式一样。
+* 2. setDigitCount(int)用于设置可显示位数；
+* setSegmentStyle()用于设置样式；setMode()用于设置数字显示方式；display()用于显示。
