@@ -76,3 +76,8 @@
 * 1. QCalendarWidget为日历控件，用户可以设置日期范围，可以设置日历初始化时显示的日期(如果没有设置的话，默认为当天日期)；
 * 2. QDateTimeEdit、QDateEdit以及QTimeEdit这三个控件用法差不多，读者掌握QDateTimeEdit的话其他两种其实也就明白怎么使用了；
 * 3. 通过setCalendarPopup(True)方法可以让QDateTimeEdit和QDateEdit显示日历
+
+## 14.1 小结
+* 虽然QtDesigner使用起来很方便，但是笔者还是希望读者能够先使用代码完成界面。这样做可以让我们更加快速地掌握PyQt5。而且有些时候我们想要的界面无法通过QtDesigner很好地完成，只能通过代码实现。
+* 1. QtDesigner可以快速帮助开发人员设计界面，提高开发效率
+* 2. 用pyuic5命令可以将ui文件转换为py文件：pyuic5 -o destination.py original.ui
