@@ -58,3 +58,10 @@
 * QSlider和QDial用法都差不多
 * Qt.QHorizontal和Qt.Vertical分别用来实现水平的滑动条和垂直的滑动条
 * setWindowTitle()可以设置窗口标题，setFixedSize()可以固定窗口或控件大小。
+
+## 2020.6.15
+### 10.3 小结
+* 1. QTimer定时器会根据设定的时间不断发出timeout信号并调用连接的槽函数，通过start(int)方法来设置时间并启动定时器，stop()方法用于停止定时器；
+* 2. 通过isActive()方法来判断定时器是否被激活，setSingleShot()方法可以在触发timeout信号后只调用一次槽函数；
+* 3. 通过setOrientation(Qt.Vertical)方法可以将进度条设为垂直显示；
+* 4. setMinimum()和setMaximum()方法用来设置进度条范围(可以用setRange()替代)，setValue()方法用于设置进度条的当前值，reset()方法用于重置进度条
