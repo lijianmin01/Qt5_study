@@ -81,3 +81,8 @@
 * 虽然QtDesigner使用起来很方便，但是笔者还是希望读者能够先使用代码完成界面。这样做可以让我们更加快速地掌握PyQt5。而且有些时候我们想要的界面无法通过QtDesigner很好地完成，只能通过代码实现。
 * 1. QtDesigner可以快速帮助开发人员设计界面，提高开发效率
 * 2. 用pyuic5命令可以将ui文件转换为py文件：pyuic5 -o destination.py original.ui
+
+
+## 16.2 小结
+* 1. 窗口可分为标题栏、边框和客户区三个部分。但是从Linux系统上的输出结果来看，在Linux上的窗口并没有将窗口划分为是那个部分，而是始终保持一个整体。Mac上的窗口也没有边框这一部分；
+* 2. move(x, y)和resize(width, height)方法的功能可以单单通过setGeometry(x, y, width, height)方法来实现(我们也可以用该方法实现窗口中各控件的布局)。
