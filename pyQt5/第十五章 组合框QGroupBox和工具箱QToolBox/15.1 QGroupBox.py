@@ -86,7 +86,7 @@ class Demo(QWidget):
 
     def on_and_off_func(self):
         if self.on.isChecked():
-            path = 'images/{}.png'.format([btn.text() for btn in self.color_list if btn.isChecked()][0])
+            path = '../QIconImg/15part/{}.png'.format([btn.text() for btn in self.color_list if btn.isChecked()][0])
             self.pic_label.setPixmap(QPixmap(path))
         else:
             self.pic_label.setPixmap(QPixmap('../QIconImg/15part/off.png'))
