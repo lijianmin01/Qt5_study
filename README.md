@@ -109,12 +109,15 @@
 * 2. 关键知识点：获取选中的文本 self.text_edit.textCursor().selection().toHtml()，读者可以在QtAssitant中查询下相应方法。
 
 
-
 ### ​24.6 小结
 * 1. 可以把拆分窗口当作一种特殊的布局管理器来使用，让界面各控件更有灵活性；
 * 2. 堆叠窗口QStackedWidget很适合被用来实现App的多界面功能，读者可以在游戏开发中使用该控件；
 * 3. QDockWidget或者QMdiArea应该与QMainWindow主窗口一起搭配使用；
 * 4. QTabWidget用法和QStackedWidget用法类似；而QDockWidget用法则与QMdiArea用法类似。 
+
+### 27.3 小结
+* 1. 为避免程序界面卡死，我们应该将复杂耗时的操作放入到自定义的线程中，重新定义run函数即可；
+* 2. 若要实时获取线程中的某个值，可以通过信号来传递。
 
 
 
