@@ -72,31 +72,49 @@
 * 2. setDigitCount(int)用于设置可显示位数；
 * setSegmentStyle()用于设置样式；setMode()用于设置数字显示方式；display()用于显示。
 
-## ​12.3 小结
+### ​12.3 小结
 * 1. QCalendarWidget为日历控件，用户可以设置日期范围，可以设置日历初始化时显示的日期(如果没有设置的话，默认为当天日期)；
 * 2. QDateTimeEdit、QDateEdit以及QTimeEdit这三个控件用法差不多，读者掌握QDateTimeEdit的话其他两种其实也就明白怎么使用了；
 * 3. 通过setCalendarPopup(True)方法可以让QDateTimeEdit和QDateEdit显示日历
 
-## 14.1 小结
+### 14.1 小结
 * 虽然QtDesigner使用起来很方便，但是笔者还是希望读者能够先使用代码完成界面。这样做可以让我们更加快速地掌握PyQt5。而且有些时候我们想要的界面无法通过QtDesigner很好地完成，只能通过代码实现。
 * 1. QtDesigner可以快速帮助开发人员设计界面，提高开发效率
 * 2. 用pyuic5命令可以将ui文件转换为py文件：pyuic5 -o destination.py original.ui
 
 
-## 16.2 小结
+### 16.2 小结
 * 1. 窗口可分为标题栏、边框和客户区三个部分。但是从Linux系统上的输出结果来看，在Linux上的窗口并没有将窗口划分为是那个部分，而是始终保持一个整体。Mac上的窗口也没有边框这一部分；
 * 2. move(x, y)和resize(width, height)方法的功能可以单单通过setGeometry(x, y, width, height)方法来实现(我们也可以用该方法实现窗口中各控件的布局)。
 
-## 17.4 小结：
+### 17.4 小结：
 * 1. 本章一共介绍了三种事件类型：窗口关闭事件、鼠标事件和键盘事件，分别是对窗口关闭、鼠标和键盘动作的响应。当然事件类型还有很多，之后章节会有涉及；
 * 2. setMouseTracking(True)可以让窗口时刻追踪鼠标，而不需要在鼠标被按下时才会进行追踪；
 * 3. x()和y()获取鼠标相对于窗口部件的坐标值，而globalX()和globalY()获取鼠标相对于显示屏窗口的坐标值；
 * 4. button()方法用于获取鼠标被按下或释放的键，key()方法用于获取键盘被按下或释放的键。
 
-## 18.3 小结
+### 18.3 小结
 * 1. 使用QMimeData类来处理MIME类型数据；
 * 2. 拖放事件一共有四种，分别在拖动目标进入窗口或部件时、目标进入后继续被拖动时、目标离开窗口或控件时以及目标被放下时；
 * 3. 剪贴板的内容发生变化的话，则会触发dataChanged信号。剪贴板针对不同数据类型有相应获取和设置的方法。
+
+### 21.2 小结
+* 1. 读者可以将QLabel换成一个QWidget，而这个QWidget中包含许多子控件，这样做可以节省许多界面空间；
+* 2. QScrollBar当然不一定要跟QScrollArea一起使用，我们也可以将它看成一个QSlider；
+* 3. 以上例子只是QScrollArea和QScrollBar用法的一小部分，大家可以通过文档了解到更多用法(一定要多查文档)。
+
+## 2020.6.17
+### 23.2 小结
+* 1. 通过上方实例我们知道可以往QMainWindow主窗口中添加很多功能，各个功能通过QAction动作对象来实现。而这写动作对象被整齐有序的添加到菜单栏和工具栏中。这就是为什么我们应该用QMainWindow类来实现较为复杂的应用程序；
+* 2. 关键知识点：获取选中的文本 self.text_edit.textCursor().selection().toHtml()，读者可以在QtAssitant中查询下相应方法。
+
+
+
+
+
+
+
+
 
 
 
