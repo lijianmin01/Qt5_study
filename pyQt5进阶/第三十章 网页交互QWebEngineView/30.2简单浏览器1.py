@@ -92,9 +92,7 @@ class Demo(QWidget):
                 else:
                     self.browser.load(QUrl('https://www.baidu.com/s?wd='+self.url_le.text()))
 
-    def mousePressEvent(self, QMouseEvent):
-        print(self.browser.url())
-        self.browser.load(QUrl(self.browser.url()))
+
 
     def urlChanged(self):
         self.browser.load(QUrl(self.browser.url()))

@@ -1,16 +1,18 @@
 import sys
 from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtWebEngineWidgets import QWebEngineView,QWebEngineSettings
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLineEdit, QVBoxLayout, QHBoxLayout, QMainWindow, \
     QTabWidget
 
+import re
 
 class Demo(QWidget):
     def __init__(self):
         super(Demo, self).__init__()
 
         # 创建tabwidget
+
         self.tabWidget = QTabWidget()
         self.tabWidget.setTabShape(QTabWidget.Triangular)
         self.tabWidget.setDocumentMode(True)
@@ -18,6 +20,7 @@ class Demo(QWidget):
         self.tabWidget.setTabsClosable(True)
         self.tabWidget.tabCloseRequested.connect(self.close_Tab)
 
+        self.tabWidget.currentChanged.connect(self.change_tab)
 
         self.tabWidget.setTabShape(QTabWidget.Triangular)
         self.tabWidget.setDocumentMode(True)
@@ -29,12 +32,24 @@ class Demo(QWidget):
 
         # 第一个标签页
         self.webview = WebEngineView(self)  # self必须要有，是将主窗口作为参数，传给浏览器
+
         self.webview.load(QUrl("http://www.baidu.com"))
+
+        self.now_view = self.webview
         self.create_tab(self.webview)
 
 
+
+    def change_tab(self):
+        # webview
+        self.now_view = self.tabWidget.currentWidget().webview
+        self.now_line = self.tabWidget.currentWidget().url_le
+
     # 创建tab
     def create_tab(self, webview):
+        webview.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
+        webview.settings().setAttribute(QWebEngineSettings.JavascriptEnabled, True)
+        webview.settings().setAttribute(QWebEngineSettings.FullScreenSupportEnabled, True)
         self.tab = QWidget()
 
         self.tab.back_btn = QPushButton(self.tab)
@@ -43,9 +58,14 @@ class Demo(QWidget):
         self.tab.zoom_in_btn = QPushButton(self.tab)
         self.tab.zoom_out_btn = QPushButton(self.tab)
         self.tab.url_le = QLineEdit(self.tab)
+        self.tab.webview = webview
+
+        self.now_view=self.tab.webview
+        self.now_line=self.tab.url_le
 
         self.tabWidget.addTab(self.tab, "新标签页")
         self.tabWidget.setCurrentWidget(self.tab)
+
 
         self.Layout = QVBoxLayout(self.tab)
         self.btn = QHBoxLayout(self.tab)
@@ -83,10 +103,20 @@ class Demo(QWidget):
         self.Layout.addLayout(self.btn)
         self.Layout.addWidget(webview)
 
-        # 设置导航文本框
-        #self.tab.url_le.setText(webview)
 
-
+        # 算了先设置搜索功能把
+    def keyPressEvent(self,QKeyEvent):
+        if QKeyEvent.key() == Qt.Key_Return or QKeyEvent.key() == Qt.Key_Enter:
+            flag = re.match(r'^https?:/{2}\w.+$', str(self.now_line.text()))
+            # self.url_le.hasFocus():判断是为了只有在输入框被编辑的状态下敲击回车才会让网页实现跳转
+            # 用load()方法并传入一个QUrl类型参数即可(不能单单传入字符串，需要用QUrl()把字符串转为QUrl对象)
+            if flag and self.now_line.hasFocus():
+                self.now_view.load(QUrl(self.now_line.text()))
+            else:
+                if self.now_line.text()[-4:] == '.com':
+                    self.now_view.load(QUrl('https://' + self.now_line.text()))
+                else:
+                    self.now_view.load(QUrl('https://www.baidu.com/s?wd=' + self.now_line.text()))
 
     # 关闭tab
     def close_Tab(self, index):
@@ -101,13 +131,30 @@ class WebEngineView(QWebEngineView):
     def __init__(self,mainwindow,parent=None):
         super(WebEngineView, self).__init__(parent)
         self.mainwindow = mainwindow
+        self.other_init()
+
 
     # 重写createwindow()，实现制作出新的页面
     def createWindow(self, QWebEnginePage_WebWindowType):
         new_webview = WebEngineView(self.mainwindow)
-
         self.mainwindow.create_tab(new_webview)
+        new_webview.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
         return new_webview
+
+    def other_init(self):
+        # #支持视频播放
+        self.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
+        # 支持页面关闭请求
+        self.page().windowCloseRequested.connect(self.on_windowCloseRequested)
+
+        # 支持页面下载请求
+        # self.page().profile().downloadRequested.connect(self.on_downloadRequested)
+
+    #  支持页面关闭请求
+    def on_windowCloseRequested(self):
+        the_index = self.mainwindow.tabWidget.currentIndex()
+        self.mainwindow.tabWidget.removeTab(the_index)
+
 
 
 if __name__ == "__main__":
