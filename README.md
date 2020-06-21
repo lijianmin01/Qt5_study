@@ -125,7 +125,11 @@
 * 2. 读者可以在Qt Assistant中输入Qt Style Sheets Reference查询所有的属性和值，子控件以及伪状态等：
 
 
-
+## 2020.6.21
+### 32.5 小结
+* 1. QPropertyAnimation类最为重要，它是动画制作中用到最多的类了；
+* 2. PyQt5中属性创建跟Python中的操作十分类似，既可以通过装饰器也可以通过函数方式来实现；
+* 3. 之前我们常用QTimer来实现动画，自从引入了QTimeLine，动画实现变得更加简单
 
 
 
